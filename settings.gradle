@@ -1,2 +1,3 @@
 rootProject.name = 'HttpUtils'
+include 'utils'
 

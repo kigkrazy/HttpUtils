@@ -1,4 +1,4 @@
-package com.reizx.miniokhttputils;
+package com.reizx.httputils;
 
 
 import org.junit.Test;

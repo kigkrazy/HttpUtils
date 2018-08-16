@@ -1,0 +1,34 @@
+version 'unspecified'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    compile 'com.squareup.okhttp3:okhttp:3.10.0'
+    compile group: 'commons-io', name: 'commons-io', version: '2.5'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
+}
+
+// 上传jcenter的工具配置
+apply plugin: 'com.novoda.bintray-release'
+
+// 发布请执行：
+// gradlew clean build bintrayUpload -PbintrayUser=kigkrazy -PbintrayKey=${APIKey} -PdryRun=false
+publish {
+    repoName = 'reizxutils'
+    artifactId = 'HttpUtils'
+    groupId = 'com.reizx'
+    userOrg = 'kigkrazy'//bintray用户名
+    publishVersion =  parent.ext.utilVersion
+    website = 'https://github.com/kigkrazy/HttpUtils'
+    desc = 'an http utils collection'//描述，不重要
+}
+
+//解决错误 ： 错误: 编码GBK的不可映射字符

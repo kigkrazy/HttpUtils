@@ -1,18 +1,27 @@
-group 'reizx'
-version '1.0-SNAPSHOT'
+buildscript {
 
-apply plugin: 'java'
-
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        //上传到JCENTER的库
+        classpath 'com.novoda:bintray-release:0.8.1'
+    }
 }
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+allprojects {
+    repositories {
+        jcenter()
+    }
+    //加上这些
+    tasks.withType(Javadoc) {
+        options{ encoding "UTF-8"
+            charSet 'UTF-8'
+            links "http://docs.oracle.com/javase/7/docs/api"
+        }
+    }
 
-    compile 'com.squareup.okhttp3:okhttp:3.10.0'
-    compile group: 'commons-io', name: 'commons-io', version: '2.5'
-    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
+    ext {
+        utilVersion = "1.0.1"
+    }
 }

@@ -1,4 +1,4 @@
-package com.reizx.miniokhttputils;
+package com.reizx.httputils;
 
 import com.zhy.http.okhttp.OkHttpUtils;
 import okhttp3.Response;
