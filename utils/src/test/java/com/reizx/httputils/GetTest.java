@@ -14,6 +14,7 @@ public class GetTest {
                 .url("http://2018.ip138.com/ic.asp")
                 .build()
                 .execute();
-        System.out.println("the respon : "  + response);
+        String result = new String(response.body().bytes(), "GB2312");
+        System.out.println("the respon : "  + result);
     }
 }
