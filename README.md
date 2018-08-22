@@ -3,10 +3,19 @@
 
 
 ## 使用
+### gradle
 ```groovy
 compile 'com.reizx:HttpUtils:1.0.1'
 ```
-
+### maven
+```html
+<dependency>
+  <groupId>com.reizx</groupId>
+  <artifactId>HttpUtils</artifactId>
+  <version>1.0.1</version>
+  <type>pom</type>
+</dependency>
+```
 ## 目前对以下需求进行了封装
 * 一般的get请求
 * 一般的post请求
